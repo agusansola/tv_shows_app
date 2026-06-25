@@ -12,7 +12,7 @@ class ShowsProvider extends ChangeNotifier {
   String? _errorMessage;
 
   List<ShowModel> get shows => _shows;
-  bool get isloading => _isLoading;
+  bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
 
   Future<void> getShows() async {

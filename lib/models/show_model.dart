@@ -39,7 +39,7 @@ class ShowModel {
       averageRuntime: (json['averageRuntime'] as num?)?.toInt(),
       premiered: json['premiered'] as String,
       ended: json['ended'] as String?,
-      officialSite: json['officialSite'] as String,
+      officialSite: json['officialSite'] as String?,
       rating: RatingModel.fromJson(json['rating'] as Map<String, dynamic>),
       network: json['network'] != null
           ? NetworkModel.fromJson(json['network'] as Map<String, dynamic>)
