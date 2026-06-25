@@ -30,7 +30,17 @@ class _ShowsListScreenState extends State<ShowsListScreen> {
     final provider = context.watch<ShowsProvider>();
 
     return Scaffold(
-      appBar: AppBar(title: Text('TV Shows')),
+      appBar: AppBar(
+        title: Text('TV Shows'),
+        actions: [
+          IconButton(
+            onPressed: provider.isLoading ? null : provider.getShows,
+            icon: const Icon(Icons.refresh),
+            tooltip: 'Refresh',
+          ),
+          Padding(padding: EdgeInsets.only(right: 24.0)),
+        ],
+      ),
       body: _buildBody(provider),
     );
   }
