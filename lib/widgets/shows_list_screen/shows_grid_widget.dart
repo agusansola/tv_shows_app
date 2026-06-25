@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tv_shows_app/models/show_model.dart';
+import 'package:tv_shows_app/screens/shows_detail_screen.dart';
 import 'package:tv_shows_app/widgets/shows_list_screen/shows_card_widget.dart';
 
 class ShowsGrid extends StatelessWidget {
@@ -23,7 +24,12 @@ class ShowsGrid extends StatelessWidget {
         return ShowsCard(
           show: show,
           onCardTap: () {
-            //TODO: implement on tap nav route to detail screen
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ShowDetailScreen(show: show),
+              ),
+            );
           },
         );
       },
