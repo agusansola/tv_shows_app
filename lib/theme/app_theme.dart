@@ -6,7 +6,7 @@ class AppTheme {
   static const Color silver = Color(0xFFBEBBBB);
   static const Color vintageGrape = Color(0xFF444054);
   static const Color midnightViolet = Color(0xFF2F243A);
-  static const Color almondSilk = Color(0xFFFAC9B8);
+  static const Color almondSilk = Color(0xFFFFEDE7);
   static const Color salmon = Color(0xFFDB8A74);
 
   static ThemeData get lightTheme {
