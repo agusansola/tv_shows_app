@@ -34,6 +34,7 @@ class ShowsCard extends StatelessWidget {
                 Icon(Icons.star),
               ],
             ),
+            Padding(padding: EdgeInsets.only(bottom: 8.0)),
           ],
         ),
       ),
@@ -47,6 +48,7 @@ Widget _buildImage(ShowModel show) {
   return Image.network(
     imageMedium,
     width: double.infinity,
+    height: 185,
     fit: BoxFit.cover,
     loadingBuilder: (context, child, loadingProgress) {
       if (loadingProgress == null) {
