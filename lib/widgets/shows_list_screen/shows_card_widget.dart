@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tv_shows_app/models/show_model.dart';
 
+//TODO: no hardcoded strings, use specific file for all strings in app. 
 class ShowsCard extends StatelessWidget {
   final ShowModel show;
   final VoidCallback onCardTap;
@@ -28,12 +29,14 @@ class ShowsCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(
+                  //TODO: handle show rating average in cases in which it's null. When average is null, show on-screen 'N/A' for example
                   show.rating.average.toString(),
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 Icon(Icons.star),
               ],
             ),
+            //TODO: Instead of empty padding, best practice uses a const SizedBox with a fixed height
             Padding(padding: EdgeInsets.only(bottom: 8.0)),
           ],
         ),
@@ -45,6 +48,8 @@ class ShowsCard extends StatelessWidget {
 Widget _buildImage(ShowModel show) {
   final imageMedium = show.image.medium;
 
+  //TODO: wrap Image.network in AspectRatio widget to better handle height dimension. AspectRatio looks at the space received from the parent widget and uses width/height ratio to better accomodate child widget inside parent widget. 
+  //TODO: Remove fixed height 
   return Image.network(
     imageMedium,
     width: double.infinity,

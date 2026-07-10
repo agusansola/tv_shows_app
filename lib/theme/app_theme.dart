@@ -13,6 +13,9 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
 
+      //TODO: for coherence with Material 3, colorScheme should be ColorScheme.fromSeed
+      //TODO: better use of color palette, colors should be distributed better with a specific role for each one. External colors shouldn't be used, not because it causes error, but because it isn't coherent. 
+      //TODO: in depth personalizzation of text dimension and weight.
       colorScheme: const ColorScheme.light(
         primary: midnightViolet,
         onPrimary: Colors.white,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tv_shows_app/models/show_model.dart';
 
+//TODO: no hardcoded strings, use specific file for all strings in app. 
 class ShowDetailScreen extends StatelessWidget {
   final ShowModel show;
   const ShowDetailScreen({super.key, required this.show});
@@ -13,6 +14,7 @@ class ShowDetailScreen extends StatelessWidget {
       appBar: AppBar(title: Text(show.name)),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24.0),
+        //TODO: use LayoutBuilder for a responsive UI disposition of widgets on screen based on the width of the screen. Example: row for tablet and desktop screen dimensions, Column for phone screen dimensions. 
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -87,6 +89,8 @@ class ShowDetailScreen extends StatelessWidget {
   Widget _buildImage() {
     final imageOriginal = show.image.original;
 
+    //TODO: wrap Image.network in AspectRatio widget to better handle height dimension. AspectRatio looks at the space received from the parent widget and uses width/height ratio to better accomodate child widget inside parent widget. 
+    //TODO: Remove fixed height.
     return Image.network(
       imageOriginal,
       height: 280,

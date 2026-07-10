@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//TODO: no hardcoded strings, use specific file for all strings in app. 
 class ErrorMessageWidget extends StatelessWidget {
   final String message;
   final VoidCallback onRetry;

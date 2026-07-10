@@ -6,6 +6,7 @@ import 'package:tv_shows_app/widgets/common/error_message_widget.dart';
 import 'package:tv_shows_app/widgets/common/loading_widget.dart';
 import 'package:tv_shows_app/widgets/shows_list_screen/shows_grid_widget.dart';
 
+//TODO: no hardcoded strings, use specific file for all strings in app. 
 class ShowsListScreen extends StatefulWidget {
   const ShowsListScreen({super.key});
 
@@ -38,6 +39,7 @@ class _ShowsListScreenState extends State<ShowsListScreen> {
             icon: const Icon(Icons.refresh),
             tooltip: 'Refresh',
           ),
+          //TODO: instead of empty padding widget, used a const SizedBox with fixed width.
           Padding(padding: EdgeInsets.only(right: 24.0)),
         ],
       ),
@@ -46,6 +48,8 @@ class _ShowsListScreenState extends State<ShowsListScreen> {
   }
 
   Widget _buildBody(ShowsProvider provider) {
+
+    //TODO: handle better refresh condition. if(provider.isLoading && provider.shows.isEmpty) return LoadingWidget
     if (provider.isLoading) {
       return const LoadingWidget();
     }
@@ -54,6 +58,7 @@ class _ShowsListScreenState extends State<ShowsListScreen> {
       return ErrorMessageWidget(
         message: provider.errorMessage ?? 'ERROR',
         onRetry: () {
+          //TODO: no need for fulle method, we have provider as a parameter. We can write: provider.getShows
           context.read<ShowsProvider>().getShows();
         },
       );
