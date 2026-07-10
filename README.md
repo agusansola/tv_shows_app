@@ -95,3 +95,32 @@ I would also add a favorites screen, saving locally the shows selected by the us
 I would improve error handling by showing more specific messages, for example distinguishing between no internet connection, server error, and invalid response.
 
 These are just some examples of future implementations that could be made, but must not be taken as taxative.
+
+
+## Development approach
+
+### What I explored in greater depth during the project
+
+During the development of this project, I explored how to retrieve data from an external API and manage it correctly inside a Flutter application.
+
+In particular, I deepened my understanding of JSON parsing, model creation, asynchronous API calls, state management with Provider and ChangeNotifier, navigation between screens, and the management of loading, error, empty, and success states.
+
+I also explored how to separate the application logic from the UI and how to create reusable widgets for the grid, show cards, loading state, error state, and empty state.
+
+### How I approached the problem
+
+I approached the problem by first dividing the application into its main responsibilities.
+
+I created a service responsible for retrieving the data from the TVMaze API, models responsible for converting the JSON response into Dart objects, and a provider responsible for storing the data and managing the application state.
+
+The screens and widgets are responsible only for displaying the state provided by the provider and handling user interactions, such as refreshing the data or opening the detail screen.
+
+I developed the main data flow first and then divided the UI into smaller reusable widgets to keep the screens more readable.
+
+### Why I chose this approach
+
+I chose this approach because it keeps the different responsibilities of the application separated while remaining simple enough for the size of the project.
+
+An alternative would have been to perform the API call and manage the loading and error states directly inside the screen using setState. However, this would have mixed networking logic, state management, and UI code in the same file.
+
+Using a service and Provider made the code easier to read and maintain. I chose Provider instead of a more complex state management solution because the application currently has a limited amount of state and does not require a more structured architecture such as Bloc or Cubit.
